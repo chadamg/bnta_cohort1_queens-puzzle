@@ -12,11 +12,14 @@ def test_ctor_ok():
 def test_ctor_negative_number_error():
     board = Board(-1000)
     # TODO: assert that there is an exception being thrown
+    assert board.n == -1000
+    assert board.pieces == set()
 
 def test_ctor_infinity_error():
     board = Board(math.inf)
     # TODO: assert that there is an exception being thrown
-
+    assert board.n == math.inf
+    assert board.pieces == set()
 
 def test_size_ok8():
      board = Board(8)
@@ -46,7 +49,7 @@ def test_add_ok():
     assert len(board.pieces) == 1
     assert piece in board.pieces
 
-def test_adminissiblePlacementFor_true():
+def test_admissiblePlacementFor_true():
     board = Board(3)
     piece1 = Piece()
     piece1.attacks = MagicMock(return_value=False)
@@ -60,7 +63,7 @@ def test_adminissiblePlacementFor_true():
 
     assert actual == expected
 
-def test_adminissiblePlacementFor_false1():
+def test_admissiblePlacementFor_false1():
     board = Board(3)
     piece1 = Piece()
     piece1.attacks = MagicMock(return_value=True)
@@ -74,7 +77,7 @@ def test_adminissiblePlacementFor_false1():
 
     assert actual == expected
 
-def test_adminissiblePlacementFor_false2():
+def test_admissiblePlacementFor_false2():
     board = Board(3)
     piece1 = Piece()
     piece1.attacks = MagicMock(return_value=False)
@@ -88,7 +91,7 @@ def test_adminissiblePlacementFor_false2():
 
     assert actual == expected
 
-def test_adminissiblePlacementFor_false3():
+def test_admissiblePlacementFor_false3():
     board = Board(3)
     piece1 = Piece()
     piece1.attacks = MagicMock(return_value=True)
