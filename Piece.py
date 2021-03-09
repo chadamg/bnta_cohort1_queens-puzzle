@@ -13,10 +13,10 @@ class Piece:
             and (i < board.size())
             and (0 <= j)
             and (j < board.size()) ):
-                self.board = board;
-                self.i = i;
-                self.j = j;
-                board.add( self );
+                self.board = board
+                self.i = i
+                self.j = j
+                board.add( self )
 
     def removeFromBoard(self):
         if (self.isOnBoard()):
@@ -41,7 +41,7 @@ class Piece:
     
     def colIndex(self):
         if (self.isOnBoard()):
-            return self.j;
+            return self.j
         else:
             return self.UNKNOWN
 
